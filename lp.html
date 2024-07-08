@@ -25,6 +25,7 @@
             align-items: center;
             max-width: 1200px;
             margin: auto;
+            padding: 20px;
         }
 
         .image-container {
@@ -47,34 +48,44 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: left;
+            margin-left: 20px;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007BFF;
+            margin-bottom: 20px;
         }
 
         h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: #4A00E0;
+            color: #007BFF;
         }
 
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 400;
             margin-bottom: 30px;
             color: #666;
         }
 
         .btn {
-            background-color: #4A00E0;
+            background-color: #007BFF;
             color: white;
             padding: 15px 30px;
             text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
+            border-radius: 30px;
+            display: block;
             font-size: 1.5rem;
             transition: background-color 0.3s;
-            margin-bottom: 20px;
+            margin: 0 auto 20px;
+            width: fit-content;
         }
 
         .btn:hover {
-            background-color: #3700b3;
+            background-color: #0056b3;
         }
 
         ul {
@@ -84,15 +95,17 @@
         }
 
         ul li {
-            font-size: 1.2rem;
+            font-size: 1rem;
+            font-weight: 400;
             margin-bottom: 10px;
             display: flex;
             align-items: start;
+            color: #666;
         }
 
         ul li::before {
             content: '•';
-            color: #4A00E0;
+            color: #007BFF;
             font-size: 2rem;
             margin-right: 10px;
             line-height: 1;
@@ -105,6 +118,7 @@
             <img src="pexels-nurseryart-346885.jpg" alt="Travel Image">
         </div>
         <div class="text-container">
+            <div class="logo">TravelBot</div>
             <h1>L'intelligence artificielle au service des agences de voyage</h1>
             <h2>Nos chatbots IA vous aident à développer vos ventes, et à réduire le temps que vous passez sur des tâches rébarbatives</h2>
             <a href="#" class="btn">Essayez gratuitement</a>
