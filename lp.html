@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelBot - L'intelligence artificielle au service des agences de voyage</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@400;500;700&family=Raleway:wght@400;700&display=swap');
 
         body {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             background: linear-gradient(180deg, #ffffff, #f0f0f0);
             color: #333;
             display: flex;
@@ -59,12 +59,14 @@
         }
 
         h1 {
+            font-family: 'Raleway', sans-serif;
             font-size: 2.5rem;
             margin-bottom: 20px;
             color: #007BFF;
         }
 
         h2 {
+            font-family: 'Raleway', sans-serif;
             font-size: 1.2rem;
             font-weight: 400;
             margin-bottom: 30px;
@@ -96,4 +98,41 @@
             margin: 0;
         }
 
-        
+        ul li {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: start;
+            color: #666;
+        }
+
+        ul li::before {
+            content: '•';
+            color: #007BFF;
+            font-size: 2rem;
+            margin-right: 10px;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="pexels-nurseryart-346885.jpg" alt="Travel Image">
+        </div>
+        <div class="text-container">
+            <div class="logo">TravelBot</div>
+            <h1>L'intelligence artificielle au service des agences de voyage</h1>
+            <h2>Nos chatbots IA vous aident à développer vos ventes, et à réduire le temps que vous passez sur des tâches rébarbatives</h2>
+            <a href="#" class="btn">Essayez gratuitement</a>
+            <ul>
+                <li>Disponibilité 24/7 : Assistance client en continu, même en dehors des heures de bureau.</li>
+                <li>Personnalisation : Recommandations de voyage sur mesure basées sur les préférences des clients.</li>
+                <li>Efficacité : Traitement rapide des demandes pour une meilleure satisfaction client.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
