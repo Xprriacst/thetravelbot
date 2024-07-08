@@ -11,9 +11,9 @@
             background: linear-gradient(180deg, #0D0D0D, #3A1C71, #D76D77, #FFAF7B);
             color: white;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
             text-align: center;
         }
@@ -23,11 +23,6 @@
             padding: 20px;
             background: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
             margin-bottom: 20px;
         }
 
@@ -47,29 +42,34 @@
             padding: 20px 40px;
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 20px;
             display: inline-block;
             font-size: 1.5rem;
+            transition: background-color 0.3s;
         }
 
-        .testimonial, .features {
-            margin-top: 40px;
+        .btn:hover {
+            background-color: #3700b3;
+        }
+
+        .testimonial, .features, .form-container {
+            max-width: 800px;
             text-align: left;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
         }
 
         .testimonial p, .features p {
             font-size: 1.2rem;
         }
 
-        .form-container {
-            margin-top: 40px;
-            text-align: center;
-        }
-
         .form-container input[type="email"] {
             padding: 10px;
             font-size: 1rem;
             margin-right: 10px;
+            border-radius: 5px;
+            border: none;
         }
 
         .form-container input[type="submit"] {
@@ -80,6 +80,11 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #3700b3;
         }
     </style>
 </head>
@@ -87,29 +92,12 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <div class="logo">TravelBot</div>
                 <h1>L'intelligence artificielle au service des agences de voyage</h1>
                 <h2>Nos chatbots IA vous aident à développer vos ventes, et à réduire le temps que vous passez sur des tâches rébarbatives</h2>
                 <a href="#" class="btn">Essayez gratuitement</a>
             </div>
         </section>
-        <section class="testimonial">
-            <h3>Témoignages de nos clients</h3>
-            <p>"TravelBot a transformé notre manière de travailler. Nos ventes ont augmenté de 30% en seulement trois mois!" - Client satisfait</p>
-        </section>
-        <section class="features">
-            <h3>Fonctionnalités principales</h3>
-            <p>- Réponse automatique aux questions fréquentes</p>
-            <p>- Réservation simplifiée</p>
-            <p>- Assistance 24/7</p>
-        </section>
-        <section class="form-container">
-            <h3>Inscrivez-vous pour une démo gratuite</h3>
-            <form action="#">
-                <input type="email" placeholder="Votre email" required>
-                <input type="submit" value="S'inscrire">
-            </form>
-        </section>
     </main>
 </body>
 </html>
+
