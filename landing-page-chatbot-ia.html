@@ -22,9 +22,10 @@
         h1, h2, h3 {
             font-weight: 700;
             color: #2c3e50;
+            text-align: center;
         }
         #hero {
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            background: linear-gradient(135deg, #6c5ce7, #5c47b7);
             color: white;
             text-align: center;
             padding: 80px 0;
@@ -33,7 +34,6 @@
         #hero h1 {
             font-size: 3em;
             margin-bottom: 20px;
-            color: white;
         }
         #hero p {
             font-size: 1.2em;
@@ -42,17 +42,17 @@
         .button {
             display: inline-block;
             font-size: 1em;
-            color: #6c5ce7;
-            background: white;
+            color: white;
+            background: #6c5ce7;
             padding: 12px 24px;
             border: none;
-            border-radius: 5px;
+            border-radius: 12px;
             cursor: pointer;
             text-decoration: none;
             transition: all 0.3s ease;
         }
         .button:hover {
-            background: #6c5ce7;
+            background: #5c47b7;
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
@@ -129,6 +129,13 @@
         .floating-header .button {
             font-size: 0.9em;
             padding: 10px 20px;
+            background: transparent;
+            color: #6c5ce7;
+            border: 2px solid #6c5ce7;
+        }
+        .floating-header .button:hover {
+            background: #6c5ce7;
+            color: white;
         }
     </style>
 </head>
@@ -211,10 +218,10 @@
             </div>
             <div class="faq-item">
                 <h3>Quels sont les coûts associés à l'utilisation de TravelBot AI ?</h3>
+    
                 <p>Nous offrons plusieurs plans tarifaires adaptés aux besoins de chaque agence de voyage. Contactez notre équipe commerciale pour obtenir un devis personnalisé.</p>
             </div>
             <div class="faq-item">
-            
                 <h3>Comment TravelBot AI assure-t-il la sécurité des données des clients ?</h3>
                 <p>Nous utilisons des protocoles de sécurité avancés et conformes aux réglementations en vigueur pour protéger toutes les données de vos clients.</p>
             </div>
@@ -228,4 +235,5 @@
     </footer>
 </body>
 </html>
+
 
