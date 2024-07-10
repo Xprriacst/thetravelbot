@@ -12,14 +12,73 @@
             font-family: 'Open Sans', sans-serif;
             background: linear-gradient(180deg, #ffffff, #f0f0f0);
             color: #333;
+            text-align: center;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .sticky-banner {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #007BFF;
+            color: white;
+            padding: 10px 0;
+            font-size: 1rem;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .sticky-banner a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: url('pexels-nurseryart-346885.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 100px 20px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            min-height: 100vh;
-            text-align: center;
-            padding: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            height: 100vh;
             box-sizing: border-box;
+        }
+
+        .hero h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        .hero .btn {
+            background: linear-gradient(135deg, #007BFF, #00d2ff);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            display: block;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5);
+        }
+
+        .hero .btn:hover {
+            background: linear-gradient(135deg, #0056b3, #007BFF);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
         }
 
         .container {
@@ -29,6 +88,8 @@
             align-items: center;
             max-width: 1200px;
             margin: auto;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         .image-container, .text-container {
@@ -96,30 +157,6 @@
             box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        ul li {
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 400;
-            font-size: 1rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: start;
-            color: #666;
-        }
-
-        ul li::before {
-            content: '•';
-            color: #007BFF;
-            font-size: 2rem;
-            margin-right: 10px;
-            line-height: 1;
-        }
-
         .bandeau {
             display: flex;
             background-color: white;
@@ -129,7 +166,7 @@
             margin-bottom: 30px;
             margin-top: 20px;
             padding: 20px;
-            width: calc(100% - 40px); /* Adjusting width for margins */
+            width: calc(100% - 40px);
             box-sizing: border-box;
         }
 
@@ -226,7 +263,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: left;
-            width: calc(100% - 40px); /* Adjusting width for margins */
+            width: calc(100% - 40px);
         }
 
         .faq-container h2 {
@@ -276,12 +313,12 @@
             }
 
             .bandeau.horizontal img {
-                width: 50%; /* Ensures the image takes half the width of the container */
+                width: 50%;
                 height: auto;
             }
 
             .bandeau-content {
-                width: 50%; /* Ensures the text content takes half the width of the container */
+                width: 50%;
                 box-sizing: border-box;
             }
         }
@@ -323,28 +360,20 @@
             }
 
             .bandeau.horizontal img, .bandeau-content {
-                width: 100%; /* Ensures the image and text content take full width of the container on mobile */
+                width: 100%;
                 box-sizing: border-box;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="image-container">
-            <img src="pexels-nurseryart-346885.jpg" alt="Travel Image">
-        </div>
-        <div class="text-container">
-            <div class="logo">TravelBot</div>
-            <h1>L'intelligence artificielle au service des agences de voyage</h1>
-            <h2>Nos chatbots IA vous aident à développer vos ventes, et à réduire le temps que vous passez sur des tâches rébarbatives</h2>
-            <a href="https://forms.gle/XTRECo2LNaKMdkFs6" class="btn" target="_blank">Essayez gratuitement</a>
-            <ul>
-                <li>Disponibilité 24/7 : Assistance client en continu, même en dehors des heures de bureau.</li>
-                <li>Personnalisation : Recommandations de voyage sur mesure basées sur les préférences des clients.</li>
-                <li>Efficacité : Traitement rapide des demandes pour une meilleure satisfaction client.</li>
-            </ul>
-        </div>
+    <div class="sticky-banner">
+        Pour tester gratuitement l'outil cliquer <a href="https://forms.gle/XTRECo2LNaKMdkFs6" target="_blank">ICI</a>
+    </div>
+    <div class="hero">
+        <h1>TravelBot - L'IA au service des agences de voyage</h1>
+        <h2>Nos chatbots IA vous aident à développer vos ventes, et à réduire le temps que vous passez sur des tâches rébarbatives</h2>
+        <a href="https://forms.gle/XTRECo2LNaKMdkFs6" class="btn" target="_blank">Essayez gratuitement</a>
     </div>
     <div class="container">
         <div class="bandeau vertical">
