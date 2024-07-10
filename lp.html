@@ -49,6 +49,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: left;
             margin-top: 20px;
+            width: 100%;
         }
 
         .logo {
@@ -128,7 +129,8 @@
             margin-bottom: 30px;
             margin-top: 20px;
             padding: 20px;
-            position: relative;
+            width: calc(100% - 40px); /* Adjusting width for margins */
+            box-sizing: border-box;
         }
 
         .bandeau.vertical {
@@ -224,6 +226,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: left;
+            width: calc(100% - 40px); /* Adjusting width for margins */
         }
 
         .faq-container h2 {
