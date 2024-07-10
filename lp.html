@@ -64,6 +64,7 @@
             background: rgba(0, 0, 0, 0.5); /* Background for better visibility */
             padding: 10px; /* Padding for better visibility */
             border-radius: 5px;
+            color: white; /* Changed text color to white */
         }
 
         .hero .btn {
@@ -184,6 +185,18 @@
             justify-content: space-between;
             margin: 20px 0;
             padding: 20px;
+        }
+
+        .bandeau.two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .bandeau.two-columns .bandeau-item {
+            flex: 1 1 calc(50% - 20px);
+            margin: 10px;
+            box-sizing: border-box;
         }
 
         .image-item {
@@ -395,51 +408,46 @@
         </div>
     </div>
     <div class="container">
-        <!-- Premier bandeau -->
-        <div class="bandeau horizontal">
-            <div class="image-container">
-                <img src="pexels-yankrukov-8867435.jpg" alt="Service Client 24/7">
+        <div class="bandeau two-columns">
+            <div class="bandeau-item">
+                <div class="image-container">
+                    <img src="pexels-yankrukov-8867435.jpg" alt="Service Client 24/7">
+                </div>
+                <div class="text-container bandeau-content">
+                    <h2>Service Client 24/7</h2>
+                    <p>Nos chatbots sont disponibles 24 heures sur 24, 7 jours sur 7, pour répondre aux questions de vos clients, les aider à réserver leurs voyages, et résoudre les problèmes en temps réel.</p>
+                    <a href="#" class="btn">En savoir plus</a>
+                </div>
             </div>
-            <div class="text-container bandeau-content">
-                <h2>Service Client 24/7</h2>
-                <p>Nos chatbots sont disponibles 24 heures sur 24, 7 jours sur 7, pour répondre aux questions de vos clients, les aider à réserver leurs voyages, et résoudre les problèmes en temps réel.</p>
-                <a href="#" class="btn">En savoir plus</a>
+            <div class="bandeau-item">
+                <div class="image-container">
+                    <img src="pexels-shvets-2563681.jpg" alt="Personnalisation Avancée">
+                </div>
+                <div class="text-container bandeau-content">
+                    <h2>Personnalisation Avancée</h2>
+                    <p>Chaque interaction est personnalisée grâce à notre technologie IA, qui apprend et s'adapte aux préférences de vos clients, offrant ainsi une expérience unique et sur mesure.</p>
+                    <a href="#" class="btn">Découvrir</a>
+                </div>
             </div>
-        </div>
-
-        <!-- Deuxième bandeau (inversé) -->
-        <div class="bandeau horizontal inverted">
-            <div class="image-container">
-                <img src="pexels-shvets-2563681.jpg" alt="Personnalisation Avancée">
+            <div class="bandeau-item">
+                <div class="image-container">
+                    <img src="pexels-olly-826349.jpg" alt="Gain de Temps et d'Argent">
+                </div>
+                <div class="text-container bandeau-content">
+                    <h2>Gain de Temps et d'Argent</h2>
+                    <p>Automatisez les tâches répétitives et libérez du temps pour vos employés. Réduisez les coûts opérationnels tout en améliorant l'efficacité de votre service client.</p>
+                    <a href="#" class="btn">Optimiser</a>
+                </div>
             </div>
-            <div class="text-container bandeau-content">
-                <h2>Personnalisation Avancée</h2>
-                <p>Chaque interaction est personnalisée grâce à notre technologie IA, qui apprend et s'adapte aux préférences de vos clients, offrant ainsi une expérience unique et sur mesure.</p>
-                <a href="#" class="btn">Découvrir</a>
-            </div>
-        </div>
-
-        <!-- Troisième bandeau -->
-        <div class="bandeau horizontal">
-            <div class="image-container">
-                <img src="pexels-olly-826349.jpg" alt="Gain de Temps et d'Argent">
-            </div>
-            <div class="text-container bandeau-content">
-                <h2>Gain de Temps et d'Argent</h2>
-                <p>Automatisez les tâches répétitives et libérez du temps pour vos employés. Réduisez les coûts opérationnels tout en améliorant l'efficacité de votre service client.</p>
-                <a href="#" class="btn">Optimiser</a>
-            </div>
-        </div>
-
-        <!-- Quatrième bandeau (inversé) -->
-        <div class="bandeau horizontal inverted">
-            <div class="image-container">
-                <img src="pexels-karolina-grabowska-4195403.jpg" alt="Intégration Facile">
-            </div>
-            <div class="text-container bandeau-content">
-                <h2>Intégration Facile</h2>
-                <p>TravelBot s'intègre facilement à vos systèmes existants, sans interruption de service. Nous proposons une configuration rapide et une formation complète pour que vous soyez opérationnel en un rien de temps.</p>
-                <a href="#" class="btn">Commencer</a>
+            <div class="bandeau-item">
+                <div class="image-container">
+                    <img src="pexels-karolina-grabowska-4195403.jpg" alt="Intégration Facile">
+                </div>
+                <div class="text-container bandeau-content">
+                    <h2>Intégration Facile</h2>
+                    <p>TravelBot s'intègre facilement à vos systèmes existants, sans interruption de service. Nous proposons une configuration rapide et une formation complète pour que vous soyez opérationnel en un rien de temps.</p>
+                    <a href="#" class="btn">Commencer</a>
+                </div>
             </div>
         </div>
     </div>
