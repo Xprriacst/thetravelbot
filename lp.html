@@ -15,6 +15,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             min-height: 100vh;
             text-align: center;
             padding: 20px;
@@ -118,6 +119,38 @@
             line-height: 1;
         }
 
+        .bandeau {
+            display: flex;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .image-item {
+            width: 30%;
+            text-align: center;
+            margin: 0 10px;
+        }
+
+        .image-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .image-caption {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            color: #007BFF;
+            font-size: 1em;
+            line-height: 1.4;
+        }
+
         @media (min-width: 768px) {
             .image-container, .text-container {
                 flex: 1 1 45%;
@@ -145,6 +178,22 @@
                 <li>Personnalisation : Recommandations de voyage sur mesure basées sur les préférences des clients.</li>
                 <li>Efficacité : Traitement rapide des demandes pour une meilleure satisfaction client.</li>
             </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="bandeau">
+            <div class="image-item">
+                <img src="/api/placeholder/200/200" alt="Enrichissez l'Expérience Voyageur">
+                <p class="image-caption">Enrichissez l'Expérience Voyageur</p>
+            </div>
+            <div class="image-item">
+                <img src="/api/placeholder/200/200" alt="Simplifiez la Gestion des Réservations">
+                <p class="image-caption">Simplifiez la Gestion des Réservations</p>
+            </div>
+            <div class="image-item">
+                <img src="/api/placeholder/200/200" alt="Boostez Vos Revenus">
+                <p class="image-caption">Boostez Vos Revenus</p>
+            </div>
         </div>
     </div>
 </body>
