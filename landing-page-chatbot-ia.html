@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Poppins:wght@400;500;700&family=Raleway:wght@400;700&display=swap');
- 
+
         body {
             margin: 0;
             font-family: 'Open Sans', sans-serif;
@@ -17,7 +17,7 @@
             padding: 0;
             box-sizing: border-box;
         }
- 
+
         .sticky-banner {
             position: fixed;
             top: 0;
@@ -30,13 +30,13 @@
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
- 
+
         .sticky-banner a {
             color: #fff;
             font-weight: bold;
             text-decoration: underline;
         }
- 
+
         .hero {
             background: url('pexels-pawan-yadav-1321878-2577274.jpg') no-repeat center center/cover;
             color: white;
@@ -50,7 +50,7 @@
             height: 100vh;
             box-sizing: border-box;
         }
- 
+
         .hero::after {
             content: "";
             position: absolute;
@@ -61,7 +61,7 @@
             background: rgba(0, 0, 0, 0.5); /* Grey filter */
             z-index: 1;
         }
- 
+
         .hero h1 {
             font-family: 'Raleway', sans-serif;
             font-size: 2.5rem;
@@ -69,7 +69,7 @@
             position: relative;
             z-index: 2;
         }
- 
+
         .hero h2 {
             font-family: 'Raleway', sans-serif;
             font-size: 1.5rem;
@@ -80,7 +80,7 @@
             position: relative;
             z-index: 2;
         }
- 
+
         .hero .btn {
             background: white;
             color: #003366;
@@ -95,12 +95,12 @@
             z-index: 2;
             box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5);
         }
- 
+
         .hero .btn:hover {
             background: #f0f0f0;
             box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
         }
- 
+
         .bandeau {
             display: flex;
             flex-wrap: wrap;
@@ -109,31 +109,31 @@
             padding: 40px 20px;
             box-sizing: border-box;
         }
- 
+
         .bandeau-1 {
             background-color: white;
         }
- 
+
         .bandeau-3 {
             background-color: #e0e0e0; /* Light grey background */
         }
- 
+
         .bandeau-4 {
             background-color: white;
         }
- 
+
         .image-item {
             width: 30%;
             text-align: center;
             margin: 10px;
         }
- 
+
         .image-item img {
             max-width: 100%;
             border-radius: 15px;
             margin-bottom: 15px;
         }
- 
+
         .text-container {
             background: #ffffff;
             padding: 40px;
@@ -142,12 +142,12 @@
             flex: 1 1 calc(50% - 40px);
             box-sizing: border-box;
         }
- 
+
         .text-container img {
             max-width: 100%;
             border-radius: 15px;
         }
- 
+
         .text-container h2 {
             font-family: 'Raleway', sans-serif;
             font-weight: 700;
@@ -155,13 +155,13 @@
             margin-top: 0;
             font-size: 1.8em;
         }
- 
+
         .text-container p {
             color: #666;
             line-height: 1.6;
             margin-bottom: 20px;
         }
- 
+
         .faq-container {
             width: 100%;
             max-width: 1200px;
@@ -171,7 +171,7 @@
             border-radius: 10px;
             text-align: left;
         }
- 
+
         .faq-container h2 {
             font-family: 'Raleway', sans-serif;
             font-size: 2rem;
@@ -179,7 +179,7 @@
             margin-bottom: 20px;
             text-align: center;
         }
- 
+
         .faq-container p {
             font-family: 'Open Sans', sans-serif;
             font-size: 1rem;
@@ -187,14 +187,14 @@
             line-height: 1.6;
             margin-bottom: 20px;
         }
- 
+
         .faq-container p strong {
             display: block;
             font-weight: 700;
             margin-bottom: 10px;
             color: #007BFF;
         }
- 
+
         footer {
             background-color: #007BFF;
             color: white;
@@ -204,42 +204,42 @@
             width: 100%;
             bottom: 0;
         }
- 
+
         footer p {
             margin: 0;
             font-size: 1rem;
         }
- 
+
         footer a {
             color: white;
             text-decoration: underline;
             font-weight: bold;
         }
- 
+
         .gallery {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
         }
- 
+
         .gallery img {
             width: 30%;
             margin-bottom: 10px;
             border-radius: 10px;
         }
- 
+
         @media (max-width: 767px) {
             .gallery {
                 flex-direction: column;
                 align-items: center;
             }
- 
+
             .gallery img {
                 width: 80%;
                 margin-bottom: 20px;
             }
         }
- 
+
         /* Styles for "Comment ça marche" section */
         .container {
             display: flex;
@@ -252,29 +252,42 @@
             text-align: center;
         }
         .step img {
-            width: 72%;
+            width: 50%;
             border-radius: 50%;
             aspect-ratio: 1 / 1;
             object-fit: cover;
+            loading: lazy;
         }
         .step h2 {
             font-size: 20px;
             margin-top: 15px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            color: #007BFF;
         }
         .step p {
             font-size: 14px;
-            color: #555;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
         .cta-button {
             padding: 10px 20px;
-            font-size: 16px;
+            font-size: 1rem;
             color: white;
-            background-color: black;
+            background-color: #007BFF;
             border: none;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5);
+            text-decoration: none;
         }
- 
+
+        .cta-button:hover {
+            background: #0056b3;
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+        }
+
         @media (min-width: 768px) {
             .container {
                 align-items: center;
@@ -295,63 +308,61 @@
     </style>
 </head>
 <body>
- 
+
     <div class="sticky-banner">
         Pour tester gratuitement l'outil cliquer <a href="https://forms.gle/XTRECo2LNaKMdkFs6" target="_blank">ICI</a>
     </div>
- 
+
     <div class="hero bandeau bandeau-1">
         <h1>TravelBot - L'IA au service des agences de voyage</h1>
         <h2>Nos chatbots IA vous aident à développer vos ventes, et à réduire le temps que vous passez sur des tâches rébarbatives</h2>
         <a href="https://forms.gle/XTRECo2LNaKMdkFs6" class="btn" target="_blank">Essayez gratuitement</a>
     </div>
- 
+
     <div class="container">
-        <h1>Comment ça marche</h1>
         <div class="steps-wrapper">
             <div class="step">
-                <img src="pexels-canvastudio-3277806.jpg" alt="Nous personnalisons votre chatbot">
+                <img src="pexels-canvastudio-3277806.jpg" alt="Nous personnalisons votre chatbot" loading="lazy">
                 <h2>Nous personnalisons votre chatbot</h2>
                 <p>En fonction des voyages que vous proposez et des critères de choix que vous définissez.</p>
             </div>
             <div class="step">
-                <img src="pexels-alexander-mass-748453803-22707211.jpg" alt="Nous intégrons votre chatbot sur votre site web">
+                <img src="pexels-alexander-mass-748453803-22707211.jpg" alt="Nous intégrons votre chatbot sur votre site web" loading="lazy">
                 <h2>Nous intégrons votre chatbot sur votre site web</h2>
                 <p>Nos chatbots sont conçus pour s'intégrer rapidement dans votre écosystème.</p>
             </div>
             <div class="step">
-                <img src="pexels-julieaagaard-2467285.jpg" alt="Vous recevez des prospects qualifiés">
+                <img src="pexels-julieaagaard-2467285.jpg" alt="Vous recevez des prospects qualifiés" loading="lazy">
                 <h2>Vous recevez des prospects qualifiés</h2>
                 <p>Vos clients se connectent sur votre site, répondent aux questions et reçoivent une recommandation personnalisée en échange de leur mail.</p>
             </div>
         </div>
-        <button class="cta-button">Allons-y</button>
-        <p>Ignorez, mettez en pause ou annulez à tout moment.</p>
+        <a href="https://forms.gle/XTRECo2LNaKMdkFs6" class="cta-button" target="_blank">Essayer la solution</a>
     </div>
- 
+
     <div class="bandeau bandeau-3">
         <div class="text-container">
-            <img src="pexels-yankrukov-8867435.jpg" alt="Service Client 24/7">
+            <img src="pexels-yankrukov-8867435.jpg" alt="Service Client 24/7" loading="lazy">
             <h2>Service Client 24/7</h2>
             <p>Nos chatbots sont disponibles 24 heures sur 24, 7 jours sur 7, pour répondre aux questions de vos clients, les aider à réserver leurs voyages, et résoudre les problèmes en temps réel.</p>
         </div>
         <div class="text-container">
-            <img src="pexels-shvets-2563681.jpg" alt="Personnalisation Avancée">
+            <img src="pexels-shvets-2563681.jpg" alt="Personnalisation Avancée" loading="lazy">
             <h2>Personnalisation Avancée</h2>
             <p>Chaque interaction est personnalisée grâce à notre technologie IA, qui apprend et s'adapte aux préférences de vos clients, offrant ainsi une expérience unique et sur mesure.</p>
         </div>
         <div class="text-container">
-            <img src="pexels-olly-826349.jpg" alt="Gain de Temps et d'Argent">
+            <img src="pexels-olly-826349.jpg" alt="Gain de Temps et d'Argent" loading="lazy">
             <h2>Gain de Temps et d'Argent</h2>
             <p>Automatisez les tâches répétitives et libérez du temps pour vos employés. Réduisez les coûts opérationnels tout en améliorant l'efficacité de votre service client.</p>
         </div>
         <div class="text-container">
-            <img src="pexels-karolina-grabowska-4195403.jpg" alt="Intégration Facile">
+            <img src="pexels-karolina-grabowska-4195403.jpg" alt="Intégration Facile" loading="lazy">
             <h2>Intégration Facile</h2>
             <p>TravelBot s'intègre facilement à vos systèmes existants, sans interruption de service. Nous proposons une configuration rapide et une formation complète pour que vous soyez opérationnel en un rien de temps.</p>
         </div>
     </div>
- 
+
     <div class="faq-container bandeau bandeau-4">
         <h2>FAQ</h2>
         <p><strong>Qu'est-ce que TravelBot ?</strong>
@@ -377,10 +388,10 @@
         <p><strong>TravelBot peut-il personnaliser ses réponses en fonction de mes spécificités ?</strong>
         Oui, TravelBot peut être entraîné sur les données spécifiques de votre agence pour personnaliser ses réponses. En utilisant les informations de vos clients et les données internes de votre agence, TravelBot offre des réponses adaptées et précises, améliorant ainsi l'expérience utilisateur et répondant aux besoins spécifiques de chaque client.</p>
     </div>
- 
+
     <footer>
         <p>&copy; 2024 TravelBot. Tous droits réservés. <a href="#">Politique de confidentialité</a> | <a href="#">Conditions d'utilisation</a></p>
     </footer>
- 
+
 </body>
 </html>
