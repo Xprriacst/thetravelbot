@@ -279,34 +279,63 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 60px 20px;
+            background-color: white;
         }
+
+        .container h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2rem;
+            color: #007BFF;
+            margin-bottom: 40px;
+        }
+
         .step {
             width: 100%;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             text-align: center;
         }
+
         .step img {
-            width: 72%;
+            width: 100%;
+            max-width: 300px;
             border-radius: 50%;
             aspect-ratio: 1 / 1;
             object-fit: cover;
+            margin-bottom: 20px;
         }
+
         .step h2 {
-            font-size: 20px;
-            margin-top: 15px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
         }
+
         .step p {
-            font-size: 14px;
-            color: #555;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin: 0 auto;
         }
+
         .cta-button {
             padding: 10px 20px;
-            font-size: 16px;
+            font-size: 1rem;
             color: white;
-            background-color: black;
+            background-color: #007BFF;
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #0056b3;
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
         }
 
         @media (min-width: 768px) {
@@ -324,12 +353,7 @@
             }
             .step img {
                 width: 100%;
-            }
-        }
-
-        @media (min-width: 768px) {
-            .step img {
-                width: 50%;
+                max-width: 200px;
             }
         }
     </style>
@@ -350,7 +374,7 @@
 
     <div class="hero bandeau bandeau-1">
         <video autoplay muted loop>
-            <source src="bgvideotravelbotdiner.mp4" type="video/mp4">
+            <source src="bgtravelbotdiner.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="content">
