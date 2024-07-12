@@ -317,8 +317,8 @@
         }
 
         @media (max-width: 767px) {
-            .carousel {
-                display: none;
+            #bandeau-avantages .carousel {
+                display: block;
             }
 
             #bandeau-avantages .image-item {
@@ -406,6 +406,15 @@
             margin-bottom: 20px;
         }
 
+        footer {
+            background: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -492,6 +501,9 @@
         <p><strong>TravelBot peut-il personnaliser ses réponses en fonction de mes spécificités ?</strong>
         Oui, TravelBot peut être entraîné sur les données spécifiques de votre agence pour personnaliser ses réponses. En utilisant les informations de vos clients et les données internes de votre agence, TravelBot offre des réponses adaptées et précises, améliorant ainsi l'expérience utilisateur et répondant aux besoins spécifiques de chaque client.</p>
     </div>
+    <footer>
+        &copy; 2024 TravelBot. Tous droits réservés.
+    </footer>
     <script type="text/javascript">
     $(document).ready(function(){
         $('.carousel').slick({
@@ -503,18 +515,18 @@
         });
 
         // Show the carousel only on mobile
-        if ($(window).width() <= 767) {
-            $('.carousel').show();
-        } else {
-            $('.carousel').hide();
+        function checkCarousel() {
+            if ($(window).width() <= 767) {
+                $('#bandeau-avantages .carousel').show();
+            } else {
+                $('#bandeau-avantages .carousel').hide();
+            }
         }
 
+        checkCarousel();
+
         $(window).resize(function() {
-            if ($(window).width() <= 767) {
-                $('.carousel').show();
-            } else {
-                $('.carousel').hide();
-            }
+            checkCarousel();
         });
     });
     </script>
