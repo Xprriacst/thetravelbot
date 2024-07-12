@@ -110,42 +110,23 @@
             box-sizing: border-box;
         }
 
-        .carousel {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: auto;
-            overflow: hidden;
+        .image-container, .text-container {
+            flex: 1 1 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 15px;
+        }
+
+        .text-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
             border-radius: 10px;
-        }
-
-        .carousel-images {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-images img {
+            margin-top: 20px;
             width: 100%;
-            border-radius: 10px;
-        }
-
-        .carousel-buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-
-        .carousel-button {
-            background: rgba(0, 0, 0, 0.5);
-            border: none;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 50%;
         }
 
         .logo {
@@ -381,20 +362,23 @@
         <a href="https://forms.gle/XTRECo2LNaKMdkFs6" class="btn" target="_blank">Essayez gratuitement</a>
     </div>
     <div class="container">
-        <div class="carousel">
-            <div class="carousel-images">
+        <div id="bandeau-avantages" class="bandeau vertical">
+            <div class="image-item">
                 <img src="Exp voy.png" alt="Enrichissez l'Expérience Voyageur">
-                <img src="resa.png" alt="Simplifiez la Gestion des Réservations">
-                <img src="rev.png" alt="Boostez Vos Revenus">
+                <p class="image-caption">Enrichissez l'Expérience Voyageur</p>
             </div>
-            <div class="carousel-buttons">
-                <button class="carousel-button prev">&#10094;</button>
-                <button class="carousel-button next">&#10095;</button>
+            <div class="image-item">
+                <img src="resa.png" alt="Simplifiez la Gestion des Réservations">
+                <p class="image-caption">Simplifiez la Gestion des Réservations</p>
+            </div>
+            <div class="image-item">
+                <img src="rev.png" alt="Boostez Vos Revenus">
+                <p class="image-caption">Boostez Vos Revenus</p>
             </div>
         </div>
     </div>
     <div class="container">
-        <div class="bandeau two-columns">
+        <div id="bandeau-service-client" class="bandeau two-columns">
             <div class="bandeau-item">
                 <div class="image-container">
                     <img src="pexels-yankrukov-8867435.jpg" alt="Service Client 24/7">
@@ -450,36 +434,5 @@
         <p><strong>TravelBot peut-il personnaliser ses réponses en fonction de mes spécificités ?</strong>
         Oui, TravelBot peut être entraîné sur les données spécifiques de votre agence pour personnaliser ses réponses. En utilisant les informations de vos clients et les données internes de votre agence, TravelBot offre des réponses adaptées et précises, améliorant ainsi l'expérience utilisateur et répondant aux besoins spécifiques de chaque client.</p>
     </div>
-
-    <script>
-        const prevButton = document.querySelector('.prev');
-        const nextButton = document.querySelector('.next');
-        const carouselImages = document.querySelector('.carousel-images');
-        const totalImages = document.querySelectorAll('.carousel-images img').length;
-        let currentIndex = 0;
-
-        prevButton.addEventListener('click', () => {
-            if (currentIndex === 0) {
-                currentIndex = totalImages - 1;
-            } else {
-                currentIndex--;
-            }
-            updateCarousel();
-        });
-
-        nextButton.addEventListener('click', () => {
-            if (currentIndex === totalImages - 1) {
-                currentIndex = 0;
-            } else {
-                currentIndex++;
-            }
-            updateCarousel();
-        });
-
-        function updateCarousel() {
-            const translateX = -currentIndex * 100;
-            carouselImages.style.transform = `translateX(${translateX}%)`;
-        }
-    </script>
 </body>
 </html>
