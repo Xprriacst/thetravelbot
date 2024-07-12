@@ -38,7 +38,25 @@
         }
 
         .hero {
-            background: url('pexels-pawan-yadav-1321878-2577274.jpg') no-repeat center center/cover;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .hero .content {
+            position: relative;
+            z-index: 2;
             color: white;
             padding: 100px 20px;
             display: flex;
@@ -46,28 +64,12 @@
             justify-content: center;
             align-items: center;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            position: relative;
-            height: 100vh;
-            box-sizing: border-box;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Grey filter */
-            z-index: 1;
         }
 
         .hero h1 {
             font-family: 'Raleway', sans-serif;
             font-size: 2.5rem;
             margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
         }
 
         .hero h2 {
@@ -76,9 +78,6 @@
             font-weight: 400;
             margin-bottom: 30px;
             max-width: 800px;
-            color: white;
-            position: relative;
-            z-index: 2;
         }
 
         .hero .btn {
@@ -91,14 +90,48 @@
             font-size: 1rem;
             transition: all 0.3s ease;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
             box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5);
         }
 
         .hero .btn:hover {
             background: #f0f0f0;
             box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+        }
+
+        .navbar {
+            width: 100%;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 3;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            align-items: center;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
         .bandeau {
@@ -108,6 +141,7 @@
             align-items: center;
             padding: 40px 20px;
             box-sizing: border-box;
+            margin-top: 80px;
         }
 
         .bandeau-1 {
@@ -115,7 +149,7 @@
         }
 
         .bandeau-3 {
-            background-color: white; /* Change the background to white */
+            background-color: white;
         }
 
         .bandeau-4 {
@@ -302,14 +336,28 @@
 </head>
 <body>
 
-    <div class="sticky-banner">
-        Pour tester gratuitement l'outil cliquer <a href="https://forms.gle/XTRECo2LNaKMdkFs6" target="_blank">ICI</a>
+    <div class="navbar">
+        <div class="logo">DAILY HARVEST</div>
+        <ul>
+            <li><a href="#">Our Food</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Where to Find</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Get Started</a></li>
+        </ul>
     </div>
 
     <div class="hero bandeau bandeau-1">
-        <h1>TravelBot - L'IA au service des agences de voyage</h1>
-        <h2>Nos chatbots IA vous aident à développer vos ventes, et à réduire le temps que vous passez sur des tâches rébarbatives</h2>
-        <a href="https://forms.gle/XTRECo2LNaKMdkFs6" class="btn" target="_blank">J'essaye gratuitement</a>
+        <video autoplay muted loop>
+            <source src="bgvideotravelbot.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <h1>TravelBot - L'IA au service des agences de voyage</h1>
+            <h2>Nos chatbots IA vous aident à développer vos ventes, et à réduire le temps que vous passez sur des tâches rébarbatives</h2>
+            <a href="https://forms.gle/XTRECo2LNaKMdkFs6" class="btn" target="_blank">J'essaye gratuitement</a>
+        </div>
     </div>
 
     <div class="container">
