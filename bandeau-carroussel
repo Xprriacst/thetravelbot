@@ -1,0 +1,68 @@
+import React, { useState, useEffect } from 'react';
+
+const images = [
+  { src: 'pexels-alexander-mass-748453803-22707211.jpg', alt: 'Image 1', title: 'Product 1', price: '$10.00' },
+  { src: 'pexels-canvastudio-3277806.jpg, alt: 'Image 2', title: 'Product 2', price: '$15.00' },
+  { src: 'pexels-julieaagaard-2467285.jpg', alt: 'Image 3', title: 'Product 3', price: '$20.00' },
+];
+
+const ImageBanner = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
+  return (
+    <div className="relative max-w-5xl mx-auto">
+      <div className={`flex transition-transform duration-300 ease-in-out ${isMobile ? 'flex-nowrap' : 'flex-wrap justify-center'}`}
+           style={{ transform: isMobile ? `translateX(-${currentIndex * 100}%)` : 'none' }}>
+        {images.map((image, index) => (
+          <div key={index} className={`${isMobile ? 'w-full flex-shrink-0' : 'w-64'} p-2`}>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="aspect-w-9 aspect-h-16">
+                <img src={image.src} alt={image.alt} className="w-full h-full object-cover" />
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold">{image.title}</h3>
+                <p className="text-gray-600">{image.price}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      {isMobile && (
+        <>
+          <button onClick={prevImage} className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full">
+            &#8249;
+          </button>
+          <button onClick={nextImage} className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full">
+            &#8250;
+          </button>
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {images.map((_, index) => (
+              <div
+                key={index}
+                className={`w-2 h-2 rounded-full ${index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'}`}
+              ></div>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default ImageBanner;
