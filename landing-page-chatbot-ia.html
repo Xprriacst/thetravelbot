@@ -127,9 +127,9 @@
         }
 
         .image-item {
-            width: 30%;
+            width: 100%;
             text-align: center;
-            margin: 10px;
+            margin: 10px 0;
         }
 
         .image-item img {
@@ -138,20 +138,12 @@
             margin-bottom: 15px;
         }
 
-        .image-caption {
-            font-family: 'Raleway', sans-serif;
-            font-weight: 700;
-            color: #007BFF;
-            font-size: 1.2em;
-            line-height: 1.4;
-        }
-
         .text-container {
             background: #ffffff;
             padding: 40px;
             border-radius: 10px;
-            margin: 20px;
-            flex: 1 1 calc(50% - 40px);
+            margin: 20px 0;
+            flex: 1 1 100%;
             box-sizing: border-box;
         }
 
@@ -240,23 +232,15 @@
             border-radius: 10px;
         }
 
-        .swiper-container {
-            display: none;
-        }
-
-        .swiper-slide img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
         @media (max-width: 767px) {
             .gallery {
-                display: none;
+                flex-direction: column;
+                align-items: center;
             }
 
-            .swiper-container {
-                display: block;
+            .gallery img {
+                width: 80%;
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -278,16 +262,6 @@
             <img src="pexels-alexander-mass-748453803-22707211.jpg" alt="Image 1">
             <img src="pexels-canvastudio-3277806.jpg" alt="Image 2">
             <img src="pexels-julieaagaard-2467285.jpg" alt="Image 3">
-        </div>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="pexels-alexander-mass-748453803-22707211.jpg" alt="Image 1"></div>
-                <div class="swiper-slide"><img src="pexels-canvastudio-3277806.jpg" alt="Image 2"></div>
-                <div class="swiper-slide"><img src="pexels-julieaagaard-2467285.jpg" alt="Image 3"></div>
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
         </div>
     </div>
 
@@ -344,19 +318,5 @@
         <p>&copy; 2024 TravelBot. Tous droits réservés. <a href="#">Politique de confidentialité</a> | <a href="#">Conditions d'utilisation</a></p>
     </footer>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    </script>
 </body>
 </html>
