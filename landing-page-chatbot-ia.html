@@ -156,7 +156,7 @@
             margin: 10px;
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
+            transition: opacity 0.2s ease, transform 0.2s ease;
         }
 
         .image-item img {
@@ -260,6 +260,10 @@
         }
 
         @media (max-width: 767px) {
+            .navbar .logo, .navbar ul li a {
+                font-size: 0.8rem;
+            }
+
             .gallery {
                 flex-direction: column;
                 align-items: center;
@@ -293,7 +297,7 @@
             text-align: center;
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
+            transition: opacity 0.2s ease, transform 0.2s ease;
         }
 
         .step img {
@@ -372,7 +376,7 @@
                         setTimeout(() => {
                             entry.target.style.opacity = '1';
                             entry.target.style.transform = 'translateY(0)';
-                        }, index * 150);
+                        }, index * 100); // Speed up the appearance
                         observer.unobserve(entry.target);
                     }
                 });
