@@ -155,9 +155,8 @@
             width: 30%;
             text-align: center;
             margin: 10px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.2s ease, transform 0.2s ease;
+            opacity: 1; /* Set opacity to 1 to make them visible immediately */
+            transform: translateY(0); /* Reset the transform property */
         }
 
         .image-item img {
@@ -296,9 +295,8 @@
             width: 100%;
             margin-bottom: 40px;
             text-align: center;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.2s ease, transform 0.2s ease;
+            opacity: 1; /* Set opacity to 1 to make them visible immediately */
+            transform: translateY(0); /* Reset the transform property */
         }
 
         .step img {
@@ -362,32 +360,6 @@
             }
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const steps = document.querySelectorAll('.step, .image-item');
-            const options = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-                        }, index * 100); // Speed up the appearance
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, options);
-
-            steps.forEach(step => {
-                observer.observe(step);
-            });
-        });
-    </script>
 </head>
 <body>
 
@@ -468,22 +440,4 @@
         <p><strong>Comment TravelBot s'intègre-t-il à mon site web et à mes systèmes existants ?</strong>
         TravelBot est conçu pour une intégration facile et rapide. Nous fournissons une documentation complète et un support technique pour vous aider à intégrer TravelBot à votre site web et à vos systèmes existants sans besoin de compétences techniques avancées.</p>
         <p><strong>TravelBot peut-il répondre dans plusieurs langues ?</strong>
-        Oui, TravelBot supporte plusieurs langues, permettant à vos clients de recevoir de l'aide dans leur langue préférée.</p>
-        <p><strong>Est-ce que TravelBot nécessite une formation spéciale pour mon équipe ?</strong>
-        Non, TravelBot est intuitif et facile à utiliser. Nous fournissons également des ressources de formation et un support pour vous aider à tirer le meilleur parti de notre solution.</p>
-        <p><strong>Quels sont les coûts associés à l'utilisation de TravelBot ?</strong>
-        Les coûts varient en fonction de vos besoins spécifiques et de la taille de votre agence. Contactez-nous pour une consultation gratuite et un devis personnalisé.</p>
-        <p><strong>Que faire si j'ai besoin d'aide avec TravelBot ?</strong>
-        Notre équipe de support est disponible pour vous aider avec toutes vos questions et préoccupations. Vous pouvez nous contacter par email, téléphone ou via notre site web.</p>
-        <p><strong>Comment puis-je commencer à utiliser TravelBot ?</strong>
-        C'est simple ! Contactez-nous pour une démo gratuite ou pour en savoir plus sur nos offres. Nous serons ravis de vous accompagner dans la mise en place de TravelBot pour votre agence de voyage.</p>
-        <p><strong>TravelBot peut-il personnaliser ses réponses en fonction de mes spécificités ?</strong>
-        Oui, TravelBot peut être entraîné sur les données spécifiques de votre agence pour personnaliser ses réponses. En utilisant les informations de vos clients et les données internes de votre agence, TravelBot offre des réponses adaptées et précises, améliorant ainsi l'expérience utilisateur et répondant aux besoins spécifiques de chaque client.</p>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 TravelBot. Tous droits réservés. <a href="#">Politique de confidentialité</a> | <a href="#">Conditions d'utilisation</a></p>
-    </footer>
-
-</body>
-</html>
+        Oui, TravelBot supporte plusieurs langues, permettant à vos clients de recevoir de l'aide dans leur langue
