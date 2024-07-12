@@ -146,6 +146,7 @@
         .text-container img {
             max-width: 100%;
             border-radius: 15px;
+            loading: lazy;
         }
 
         .text-container h2 {
@@ -226,6 +227,7 @@
             width: 30%;
             margin-bottom: 10px;
             border-radius: 10px;
+            loading: lazy;
         }
 
         @media (max-width: 767px) {
@@ -243,16 +245,16 @@
         /* Styles for "Comment ça marche" section */
         .container {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
         }
         .step {
             width: 100%;
             margin-bottom: 20px;
-            text-align: center;
         }
         .step img {
-            width: 50%;
+            width: 72%;
             border-radius: 50%;
             aspect-ratio: 1 / 1;
             object-fit: cover;
@@ -261,48 +263,31 @@
         .step h2 {
             font-size: 20px;
             margin-top: 15px;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 700;
-            color: #007BFF;
         }
         .step p {
             font-size: 14px;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            color: #555;
         }
         .cta-button {
             padding: 10px 20px;
-            font-size: 1rem;
+            font-size: 16px;
             color: white;
-            background-color: #007BFF;
+            background-color: black;
             border: none;
             cursor: pointer;
-            border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5);
-            text-decoration: none;
-        }
-
-        .cta-button:hover {
-            background: #0056b3;
-            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+            border-radius: 5px;
         }
 
         @media (min-width: 768px) {
             .container {
-                align-items: center;
-            }
-            .steps-wrapper {
-                display: flex;
-                justify-content: space-around;
-                width: 100%;
+                flex-direction: row;
             }
             .step {
                 width: 30%;
                 margin: 20px;
             }
             .step img {
-                width: 100%;
+                width: 45%;
             }
         }
     </style>
@@ -320,44 +305,44 @@
     </div>
 
     <div class="container">
-        <div class="steps-wrapper">
-            <div class="step">
-                <img src="pexels-canvastudio-3277806.jpg" alt="Nous personnalisons votre chatbot" loading="lazy">
-                <h2>Nous personnalisons votre chatbot</h2>
-                <p>En fonction des voyages que vous proposez et des critères de choix que vous définissez.</p>
-            </div>
-            <div class="step">
-                <img src="pexels-alexander-mass-748453803-22707211.jpg" alt="Nous intégrons votre chatbot sur votre site web" loading="lazy">
-                <h2>Nous intégrons votre chatbot sur votre site web</h2>
-                <p>Nos chatbots sont conçus pour s'intégrer rapidement dans votre écosystème.</p>
-            </div>
-            <div class="step">
-                <img src="pexels-julieaagaard-2467285.jpg" alt="Vous recevez des prospects qualifiés" loading="lazy">
-                <h2>Vous recevez des prospects qualifiés</h2>
-                <p>Vos clients se connectent sur votre site, répondent aux questions et reçoivent une recommandation personnalisée en échange de leur mail.</p>
-            </div>
+        <h1>Comment ça marche</h1>
+        <div class="step">
+            <img src="pexels-canvastudio-3277806.jpg" alt="Nous personnalisons votre chatbot">
+            <h2>Nous personnalisons votre chatbot</h2>
+            <p>En fonction des voyages que vous proposez et des critères de choix que vous définissez.</p>
         </div>
-        <a href="https://forms.gle/XTRECo2LNaKMdkFs6" class="cta-button" target="_blank">Essayer la solution</a>
+        <div class="step">
+            <img src="pexels-alexander-mass-748453803-22707211.jpg" alt="Nous intégrons votre chatbot sur votre site web">
+            <h2>Nous intégrons votre chatbot sur votre site web</h2>
+            <p>Nos chatbots sont conçus pour s'intégrer rapidement dans votre écosystème.</p>
+        </div>
+        <div class="step">
+            <img src="pexels-julieaagaard-2467285.jpg" alt="Vous recevez des prospects qualifiés">
+            <h2>Vous recevez des prospects qualifiés</h2>
+            <p>Vos clients se connectent sur votre site, répondent aux questions et reçoivent une recommandation personnalisée en échange de leur mail.</p>
+        </div>
+        <button class="cta-button">Allons-y</button>
+        <p>Ignorez, mettez en pause ou annulez à tout moment.</p>
     </div>
 
     <div class="bandeau bandeau-3">
         <div class="text-container">
-            <img src="pexels-yankrukov-8867435.jpg" alt="Service Client 24/7" loading="lazy">
+            <img src="pexels-yankrukov-8867435.jpg" alt="Service Client 24/7">
             <h2>Service Client 24/7</h2>
             <p>Nos chatbots sont disponibles 24 heures sur 24, 7 jours sur 7, pour répondre aux questions de vos clients, les aider à réserver leurs voyages, et résoudre les problèmes en temps réel.</p>
         </div>
         <div class="text-container">
-            <img src="pexels-shvets-2563681.jpg" alt="Personnalisation Avancée" loading="lazy">
+            <img src="pexels-shvets-2563681.jpg" alt="Personnalisation Avancée">
             <h2>Personnalisation Avancée</h2>
             <p>Chaque interaction est personnalisée grâce à notre technologie IA, qui apprend et s'adapte aux préférences de vos clients, offrant ainsi une expérience unique et sur mesure.</p>
         </div>
         <div class="text-container">
-            <img src="pexels-olly-826349.jpg" alt="Gain de Temps et d'Argent" loading="lazy">
+            <img src="pexels-olly-826349.jpg" alt="Gain de Temps et d'Argent">
             <h2>Gain de Temps et d'Argent</h2>
             <p>Automatisez les tâches répétitives et libérez du temps pour vos employés. Réduisez les coûts opérationnels tout en améliorant l'efficacité de votre service client.</p>
         </div>
         <div class="text-container">
-            <img src="pexels-karolina-grabowska-4195403.jpg" alt="Intégration Facile" loading="lazy">
+            <img src="pexels-karolina-grabowska-4195403.jpg" alt="Intégration Facile">
             <h2>Intégration Facile</h2>
             <p>TravelBot s'intègre facilement à vos systèmes existants, sans interruption de service. Nous proposons une configuration rapide et une formation complète pour que vous soyez opérationnel en un rien de temps.</p>
         </div>
@@ -386,12 +371,4 @@
         <p><strong>Comment puis-je commencer à utiliser TravelBot ?</strong>
         C'est simple ! Contactez-nous pour une démo gratuite ou pour en savoir plus sur nos offres. Nous serons ravis de vous accompagner dans la mise en place de TravelBot pour votre agence de voyage.</p>
         <p><strong>TravelBot peut-il personnaliser ses réponses en fonction de mes spécificités ?</strong>
-        Oui, TravelBot peut être entraîné sur les données spécifiques de votre agence pour personnaliser ses réponses. En utilisant les informations de vos clients et les données internes de votre agence, TravelBot offre des réponses adaptées et précises, améliorant ainsi l'expérience utilisateur et répondant aux besoins spécifiques de chaque client.</p>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 TravelBot. Tous droits réservés. <a href="#">Politique de confidentialité</a> | <a href="#">Conditions d'utilisation</a></p>
-    </footer>
-
-</body>
-</html>
+        Oui, TravelBot peut être entraîné sur les données spécifiques de votre agence pour personnaliser ses réponses. En utilisant les informations de vos clients et les données internes de votre agence, TravelBot offre des réponses adaptées et précises, améliorant ainsi l'expérience utilisateur
