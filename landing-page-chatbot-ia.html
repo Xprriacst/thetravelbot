@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelBot - L'intelligence artificielle au service des agences de voyage</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Poppins:wght@400;500;700&family=Raleway:wght@400;700&display=swap');
 
@@ -38,7 +36,7 @@
         }
 
         .hero {
-            position: relative;
+            background: url('pexels-pawan-yadav-1321878-2577274.jpg') no-repeat center center/cover;
             color: white;
             padding: 100px 20px;
             display: flex;
@@ -46,18 +44,9 @@
             justify-content: center;
             align-items: center;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
             height: 100vh;
             box-sizing: border-box;
-        }
-
-        .hero video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
         }
 
         .hero::after {
@@ -85,19 +74,19 @@
             font-weight: 400;
             margin-bottom: 30px;
             max-width: 800px;
-            color: white;
+            color: white; /* Changed text color to white */
             position: relative;
             z-index: 2;
         }
 
         .hero .btn {
             background: white;
-            color: #003366;
+            color: #003366; /* Dark blue text color */
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 30px;
             display: block;
-            font-size: 1rem;
+            font-size: 1rem; /* Reduced font size */
             transition: all 0.3s ease;
             margin: 0 auto;
             position: relative;
@@ -110,68 +99,108 @@
             box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
         }
 
-        .carousel-container {
-            width: 80%;
-            margin: 40px auto;
-            position: relative;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
             overflow: hidden;
+            border-radius: 10px;
         }
 
-        .slides {
+        .carousel-images {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
 
-        .slide {
-            min-width: 100%;
-            box-sizing: border-box;
+        .carousel-images img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-button {
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007BFF;
+            margin-bottom: 20px;
             text-align: center;
         }
 
-        .slide img {
+        h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white; /* Changed title color to white */
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #666;
+            text-align: center;
+        }
+
+        .bandeau {
+            display: flex;
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            margin-top: 20px;
+            padding: 20px;
+            width: calc(100% - 40px);
+            box-sizing: border-box;
+        }
+
+        .bandeau.vertical {
             width: 100%;
-            height: auto;
-            object-fit: cover;
+            justify-content: space-around;
         }
 
-        .nav-button {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            font-size: 18px;
-            z-index: 10;
-        }
-
-        .nav-button.prev {
-            left: 10px;
-        }
-
-        .nav-button.next {
-            right: 10px;
-        }
-
-        .slide p {
-            margin-top: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
+        .bandeau.horizontal {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 20px;
         }
 
         .bandeau.two-columns {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto 40px;
-            padding: 20px;
-            box-sizing: border-box;
         }
 
         .bandeau.two-columns .bandeau-item {
@@ -181,9 +210,9 @@
         }
 
         .image-item {
-            width: 100%;
+            width: 20%;
             text-align: center;
-            margin: 10px 0;
+            margin: 0 10px;
             position: relative;
         }
 
@@ -234,7 +263,7 @@
         .faq-container {
             width: 100%;
             max-width: 1200px;
-            margin: 40px auto;
+            margin: 20px auto;
             padding: 20px 40px;
             background: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
@@ -315,7 +344,7 @@
             }
 
             .image-item {
-                width: 100%;
+                width: 60%;
                 margin-bottom: 20px;
             }
 
@@ -333,17 +362,11 @@
 
             .faq-container {
                 padding: 10px;
-                margin: 20px 10px;
             }
 
             .bandeau.horizontal img, .bandeau-content {
                 width: 100%;
                 box-sizing: border-box;
-            }
-
-            .bandeau.two-columns .bandeau-item {
-                flex: 1 1 100%;
-                margin: 10px 0;
             }
         }
     </style>
@@ -353,30 +376,20 @@
         Pour tester gratuitement l'outil cliquer <a href="https://forms.gle/XTRECo2LNaKMdkFs6" target="_blank">ICI</a>
     </div>
     <div class="hero">
-        <video autoplay muted loop>
-            <source src="8595789-hd_1876_1054_30fps.mp4" type="video/mp4">
-        </video>
         <h1>TravelBot - L'IA au service des agences de voyage</h1>
         <h2>Nos chatbots IA vous aident à développer vos ventes, et à réduire le temps que vous passez sur des tâches rébarbatives</h2>
         <a href="https://forms.gle/XTRECo2LNaKMdkFs6" class="btn" target="_blank">Essayez gratuitement</a>
     </div>
-    <div class="carousel-container">
-        <button class="nav-button prev" onclick="moveSlide(-1)">&lt;</button>
-        <button class="nav-button next" onclick="moveSlide(1)">&gt;</button>
+    <div class="container">
         <div class="carousel">
-            <div class="slides">
-                <div class="slide">
-                    <img src="pexels-alexander-mass-748453803-22707211.jpg" alt="Enrichissez l'Expérience Voyageur">
-                    <p>Enrichissez l'Expérience Voyageur</p>
-                </div>
-                <div class="slide">
-                    <img src="pexels-canvastudio-3277806.jpg" alt="Simplifiez la Gestion des Réservations">
-                    <p>Simplifiez la Gestion des Réservations</p>
-                </div>
-                <div class="slide">
-                    <img src="pexels-julieaagaard-2467285.jpg" alt="Boostez Vos Revenus">
-                    <p>Boostez Vos Revenus</p>
-                </div>
+            <div class="carousel-images">
+                <img src="Exp voy.png" alt="Enrichissez l'Expérience Voyageur">
+                <img src="resa.png" alt="Simplifiez la Gestion des Réservations">
+                <img src="rev.png" alt="Boostez Vos Revenus">
+            </div>
+            <div class="carousel-buttons">
+                <button class="carousel-button prev">&#10094;</button>
+                <button class="carousel-button next">&#10095;</button>
             </div>
         </div>
     </div>
@@ -439,29 +452,33 @@
     </div>
 
     <script>
-        var slider = tns({
-            container: '.mobile-slider',
-            items: 1,
-            slideBy: 'page',
-            autoplay: false,
-            controls: true,
-            nav: false,
-            controlsText: ['<', '>'],
-            responsive: {
-                0: {
-                    edgePadding: 20,
-                    gutter: 20,
-                    items: 1
-                }
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        const carouselImages = document.querySelector('.carousel-images');
+        const totalImages = document.querySelectorAll('.carousel-images img').length;
+        let currentIndex = 0;
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex === 0) {
+                currentIndex = totalImages - 1;
+            } else {
+                currentIndex--;
             }
+            updateCarousel();
         });
 
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
+        nextButton.addEventListener('click', () => {
+            if (currentIndex === totalImages - 1) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+            updateCarousel();
+        });
 
-        function moveSlide(direction) {
-            currentSlide = (currentSlide + direction + slides.length) % slides.length;
-            document.querySelector('.slides').style.transform = `translateX(-${currentSlide * 100}%)`;
+        function updateCarousel() {
+            const translateX = -currentIndex * 100;
+            carouselImages.style.transform = `translateX(${translateX}%)`;
         }
     </script>
 </body>
