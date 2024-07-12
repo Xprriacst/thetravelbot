@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelBot - L'intelligence artificielle au service des agences de voyage</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Poppins:wght@400;500;700&family=Raleway:wght@400;700&display=swap');
 
         body {
             margin: 0;
             font-family: 'Open Sans', sans-serif;
-            background: linear-gradient(180deg, #ffffff, #f0f0f0);
+            background: #f0f0f0;
             color: #333;
             text-align: center;
             padding: 0;
@@ -27,6 +28,7 @@
             font-size: 1rem;
             z-index: 1000;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .sticky-banner a {
@@ -74,19 +76,19 @@
             font-weight: 400;
             margin-bottom: 30px;
             max-width: 800px;
-            color: white; /* Changed text color to white */
+            color: white;
             position: relative;
             z-index: 2;
         }
 
         .hero .btn {
             background: white;
-            color: #003366; /* Dark blue text color */
+            color: #003366;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 30px;
             display: block;
-            font-size: 1rem; /* Reduced font size */
+            font-size: 1rem;
             transition: all 0.3s ease;
             margin: 0 auto;
             position: relative;
@@ -113,11 +115,11 @@
         }
 
         .bandeau-2 {
-            background-color: #f0f0f0;
+            background-color: white;
         }
 
         .bandeau-3 {
-            background-color: #e6f7ff; /* Light blue background to stay coherent with the color scheme */
+            background-color: #e0e0e0; /* Light grey background */
         }
 
         .bandeau-4 {
@@ -251,9 +253,42 @@
             text-decoration: underline;
             font-weight: bold;
         }
+
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 30%;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .swiper-container {
+            display: none;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                display: none;
+            }
+
+            .swiper-container {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
+
     <div class="sticky-banner">
         Pour tester gratuitement l'outil cliquer <a href="https://forms.gle/XTRECo2LNaKMdkFs6" target="_blank">ICI</a>
     </div>
@@ -265,17 +300,20 @@
     </div>
 
     <div class="bandeau bandeau-2">
-        <div class="image-item">
-            <img src="Exp voy.png" alt="Enrichissez l'Expérience Voyageur">
-            <p class="image-caption">Enrichissez l'Expérience Voyageur</p>
+        <div class="gallery">
+            <img src="pexels-alexander-mass-748453803-22707211.jpg" alt="Image 1">
+            <img src="pexels-canvastudio-3277806.jpg" alt="Image 2">
+            <img src="pexels-julieaagaard-2467285.jpg" alt="Image 3">
         </div>
-        <div class="image-item">
-            <img src="resa.png" alt="Simplifiez la Gestion des Réservations">
-            <p class="image-caption">Simplifiez la Gestion des Réservations</p>
-        </div>
-        <div class="image-item">
-            <img src="rev.png" alt="Boostez Vos Revenus">
-            <p class="image-caption">Boostez Vos Revenus</p>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="pexels-alexander-mass-748453803-22707211.jpg" alt="Image 1"></div>
+                <div class="swiper-slide"><img src="pexels-canvastudio-3277806.jpg" alt="Image 2"></div>
+                <div class="swiper-slide"><img src="pexels-julieaagaard-2467285.jpg" alt="Image 3"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </div>
 
@@ -331,5 +369,20 @@
     <footer>
         <p>&copy; 2024 TravelBot. Tous droits réservés. <a href="#">Politique de confidentialité</a> | <a href="#">Conditions d'utilisation</a></p>
     </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 </body>
 </html>
