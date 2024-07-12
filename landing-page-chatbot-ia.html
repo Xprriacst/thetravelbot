@@ -41,17 +41,7 @@
             position: relative;
             height: 100vh;
             overflow: hidden;
-        }
-
-        .hero video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: translate(-50%, -50%);
-            z-index: -1;
+            background: url('pexels-pawan-yadav-1321878-2577274.jpg') no-repeat center center/cover;
         }
 
         .hero .content {
@@ -160,6 +150,9 @@
             width: 30%;
             text-align: center;
             margin: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .image-item img {
@@ -294,6 +287,9 @@
             width: 100%;
             margin-bottom: 40px;
             text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .step img {
@@ -357,26 +353,45 @@
             }
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const steps = document.querySelectorAll('.step');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            steps.forEach(step => {
+                observer.observe(step);
+            });
+        });
+    </script>
 </head>
 <body>
 
     <div class="navbar">
-        <div class="logo">DAILY HARVEST</div>
+        <div class="logo">DAILY HARVEST : TravelBot</div>
         <ul>
-            <li><a href="#">Our Food</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Where to Find</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Log In</a></li>
-            <li><a href="#">Get Started</a></li>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Comment ça marche</a></li>
+            <li><a href="#">Avantages</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Commencer</a></li>
         </ul>
     </div>
 
     <div class="hero bandeau bandeau-1">
-        <video autoplay muted loop>
-            <source src="bgtravelbotdiner.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
         <div class="content">
             <h1>TravelBot - L'IA au service des agences de voyage</h1>
             <h2>Nos chatbots IA vous aident à développer vos ventes, et à réduire le temps que vous passez sur des tâches rébarbatives</h2>
