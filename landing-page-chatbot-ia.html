@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelBot - L'intelligence artificielle au service des agences de voyage</title>
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <!-- jQuery (necessary for Slick Carousel) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Poppins:wght@400;500;700&family=Raleway:wght@400;700&display=swap');
 
@@ -310,44 +317,36 @@
         }
 
         @media (max-width: 767px) {
-            .text-container, .bandeau-content {
-                padding: 20px;
+            .carousel {
+                display: none;
             }
 
-            .bandeau.horizontal {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .bandeau-content {
-                max-width: 90%;
-                margin-top: 20px;
-            }
-
-            .image-item {
-                width: 60%;
-                margin-bottom: 20px;
-            }
-
-            .bandeau.vertical .image-item {
-                margin: 20px 0;
-            }
-
-            .image-item img {
-                margin-bottom: 10px;
-            }
-
-            .image-caption {
-                font-size: 1rem;
-            }
-
-            .faq-container {
-                padding: 10px;
-            }
-
-            .bandeau.horizontal img, .bandeau-content {
+            #bandeau-avantages .image-item {
                 width: 100%;
-                box-sizing: border-box;
+                text-align: center;
+                margin: 0;
+            }
+
+            #bandeau-avantages .slick-slide {
+                display: none;
+                float: left;
+                height: 100%;
+                min-height: 1px;
+            }
+
+            #bandeau-avantages .slick-slide img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+            #bandeau-avantages .slick-initialized .slick-slide {
+                display: block;
+            }
+
+            .slick-prev, .slick-next {
+                color: #007BFF;
+                z-index: 2;
             }
         }
 
@@ -420,17 +419,19 @@
     </div>
     <div class="container">
         <div id="bandeau-avantages" class="bandeau vertical">
-            <div class="image-item">
-                <img src="pexels-alexander-mass-748453803-22707211.jpg" alt="Enrichissez l'Expérience Voyageur">
-                <p class="image-caption">Enrichissez l'Expérience Voyageur</p>
-            </div>
-            <div class="image-item">
-                <img src="pexels-canvastudio-3277806.jpg" alt="Simplifiez la Gestion des Réservations">
-                <p class="image-caption">Simplifiez la Gestion des Réservations</p>
-            </div>
-            <div class="image-item">
-                <img src="pexels-julieaagaard-2467285.jpg" alt="Boostez Vos Revenus">
-                <p class="image-caption">Boostez Vos Revenus</p>
+            <div class="carousel">
+                <div class="image-item">
+                    <img src="pexels-alexander-mass-748453803-22707211.jpg" alt="Enrichissez l'Expérience Voyageur">
+                    <p class="image-caption">Enrichissez l'Expérience Voyageur</p>
+                </div>
+                <div class="image-item">
+                    <img src="pexels-canvastudio-3277806.jpg" alt="Simplifiez la Gestion des Réservations">
+                    <p class="image-caption">Simplifiez la Gestion des Réservations</p>
+                </div>
+                <div class="image-item">
+                    <img src="pexels-julieaagaard-2467285.jpg" alt="Boostez Vos Revenus">
+                    <p class="image-caption">Boostez Vos Revenus</p>
+                </div>
             </div>
         </div>
     </div>
@@ -491,5 +492,31 @@
         <p><strong>TravelBot peut-il personnaliser ses réponses en fonction de mes spécificités ?</strong>
         Oui, TravelBot peut être entraîné sur les données spécifiques de votre agence pour personnaliser ses réponses. En utilisant les informations de vos clients et les données internes de votre agence, TravelBot offre des réponses adaptées et précises, améliorant ainsi l'expérience utilisateur et répondant aux besoins spécifiques de chaque client.</p>
     </div>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.carousel').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            adaptiveHeight: true
+        });
+
+        // Show the carousel only on mobile
+        if ($(window).width() <= 767) {
+            $('.carousel').show();
+        } else {
+            $('.carousel').hide();
+        }
+
+        $(window).resize(function() {
+            if ($(window).width() <= 767) {
+                $('.carousel').show();
+            } else {
+                $('.carousel').hide();
+            }
+        });
+    });
+    </script>
 </body>
 </html>
