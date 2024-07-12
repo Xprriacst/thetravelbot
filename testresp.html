@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Gallery</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            width: 23%;
+            margin-bottom: 10px;
+        }
+        .swiper-container {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .gallery {
+                display: none;
+            }
+            .swiper-container {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="gallery">
+    <img src="pexels-alexander-mass-748453803-22707211.jpg" alt="Image 1">
+    <img src="pexels-canvastudio-3277806.jpg" alt="Image 2">
+    <img src="pexels-julieaagaard-2467285.jpg" alt="Image 3">
+    <img src="image4.jpg" alt="Image 4">
+</div>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="image1.jpg" alt="Image 1"></div>
+        <div class="swiper-slide"><img src="image2.jpg" alt="Image 2"></div>
+        <div class="swiper-slide"><img src="image3.jpg" alt="Image 3"></div>
+        <div class="swiper-slide"><img src="image4.jpg" alt="Image 4"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+
+</body>
+</html>
