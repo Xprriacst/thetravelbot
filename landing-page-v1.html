@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBot - L'intelligence artificielle au service des agences de voyage</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Poppins:wght@400;500;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: #ffffff;
+            color: #333;
+            text-align: center;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            width: 100%;
+            background: white;
+            position: fixed;
+            top: 0;
+            z-index: 3;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            align-items: center;
+            height: 60px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #007BFF;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Mobile Menu */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        .menu-icon span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px;
+            background: #333;
+        }
+
+        .navbar ul {
+            display: flex;
+        }
+
+        @media (max-width: 767px) {
+            .navbar .logo, .navbar ul li a {
+                font-size: 0.8rem;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar ul.active {
+                display: flex;
+            }
+
+            .navbar ul li {
+                margin: 15px 0;
+                text-align: center;
+            }
+        }
+
+        .hero {
+            position: relative;
+            height: calc(100vh - 60px);
+            overflow: hidden;
+            background: url('pexels-pawan-yadav-1321878-2577274.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        .hero .btn {
+            background: white;
+            color: #003366;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 30px;
+            display: block;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5);
+        }
+
+        .hero .btn:hover {
+            background: #f0f0f0;
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+        }
+
+        .bandeau {
+            padding: 40px 20px;
+            box-sizing: border-box;
+            margin-top: 60px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
+            background-color: white;
+        }
+
+        .container h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2rem;
+            color: #007BFF;
+            margin-bottom: 40px;
+        }
+
+        .steps-wrapper {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            width: 30%;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .step img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 50%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .step h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .step p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #0056b3;
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+        }
+
+        .faq-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px 40px;
+            background: #ffffff;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .faq-container h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2rem;
+            color: #007BFF;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .faq-container p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .faq-container p strong {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        @media (max-width: 767px) {
+            .navbar .logo, .navbar ul li a {
+                font-size: 0.8rem;
+            }
+
+            .steps-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .step {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">TravelBot</div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul id="menu">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Comment ça marche</a></li>
+                <li><a href="#">Avantages</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Commencer</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="content">
+                <h1>TravelBot - L'IA au service des agences de voyage</h1>
+                <h2>Nos chatbots IA vous aident à développer vos ventes, et à réduire le temps que vous passez sur des tâches rébarbatives</h2>
+                <a href="https://forms.gle/XTRECo2LNaKMdkFs6" class="btn" target="_blank">J'essaye gratuitement</a>
+            </div>
+        </section>
+
+        <section class="container">
+            <h1>Comment ça marche</h1>
+            <div class="steps-wrapper">
+                <div class="step">
+                    <img src="photo1tb.jpg" alt="Nous personnalisons votre chatbot" loading="lazy">
+                    <h2>Nous personnalisons votre chatbot</h2>
+                    <p>En fonction des voyages que vous proposez et des critères de choix que vous définissez.</p>
+                </div>
+                <div class="step">
+                    <img src="photo3TB.jpg" alt="Nous intégrons votre chatbot sur votre site web" loading="lazy">
+                    <h2>Nous intégrons votre chatbot sur votre site web</h2>
+                    <p>Nos chatbots sont conçus pour s'intégrer rapidement dans votre écosystème.</p>
+                </div>
+                <div class="step">
+                    <img src="photo2TB.jpg" alt="Vous recevez des prospects qualifiés" loading="lazy">
+                    <h2>Vous recevez des prospects qualifiés</h2>
+                    <p>Vos clients se connectent sur votre site, répondent aux questions et reçoivent une recommandation personnalisée en échange de leur mail.</p>
+                </div>
+            </div>
+            <button class="cta-button">Allons-y</button>
+        </section>
+
+        <section class="bandeau bandeau-3">
+            <div class="text-container">
+                <img src="pexels-yankrukov-8867435.jpg" alt="Service Client 24/7" loading="lazy">
+                <h2>Service Client 24/7</h2>
+                <p>Nos chatbots sont disponibles 24 heures sur 24, 7 jours sur 7, pour répondre aux questions de vos clients, les aider à réserver leurs voyages, et résoudre les problèmes en temps réel.</p>
+            </div>
+            <div class="text-container">
+                <img src="pexels-shvets-2563681.jpg" alt="Personnalisation Avancée" loading="lazy">
+                <h2>Personnalisation Avancée</h2>
+                <p>Chaque interaction est personnalisée grâce à notre technologie IA, qui apprend et s'adapte aux préférences de vos clients, offrant ainsi une expérience unique et sur mesure.</p>
+            </div>
+            <div class="text-container">
+                <img src="pexels-olly-826349.jpg" alt="Gain de Temps et d'Argent" loading="lazy">
+                <h2>Gain de Temps et d'Argent</h2>
+                <p>Automatisez les tâches répétitives et libérez du temps pour vos employés. Réduisez les coûts opérationnels tout en améliorant l'efficacité de votre service client.</p>
+            </div>
+            <div class="text-container">
+                <img src="pexels-karolina-grabowska-4195403.jpg" alt="Intégration Facile" loading="lazy">
+                <h2>Intégration Facile</h2>
+                <p>TravelBot s'intègre facilement à vos systèmes existants, sans interruption de service. Nous proposons une configuration rapide et une formation complète pour que vous soyez opérationnel en un rien de temps.</p>
+            </div>
+        </section>
+
+        <section class="faq-container bandeau bandeau-4">
+            <h2>FAQ</h2>
+            <p><strong>Qu'est-ce que TravelBot ?</strong>
+            TravelBot est un chatbot IA conçu spécifiquement pour les agences de voyage. Il fournit une assistance client 24/7, aide à la gestion des réservations, répond aux questions fréquentes et améliore l'expérience utilisateur globale.</p>
+            <p><strong>Comment TravelBot peut-il améliorer mon agence de voyage ?</strong>
+            TravelBot automatise les tâches répétitives, fournit des réponses instantanées aux questions des clients, gère les réservations et les modifications d'itinéraires, et offre une assistance multilingue. Cela réduit la charge de travail de votre équipe et améliore la satisfaction des clients.</p>
+            <p><strong>Est-ce que TravelBot fonctionne 24/7 ?</strong>
+            Oui, TravelBot est disponible 24 heures sur 24 et 7 jours sur 7, offrant une assistance continue à vos clients, même en dehors des heures d'ouverture.</p>
+            <p><strong>TravelBot peut-il gérer les réservations et les annulations ?</strong>
+            Absolument. TravelBot peut aider vos clients à faire des réservations, des annulations et des modifications d'itinéraires de manière fluide et automatisée.</p>
+            <p><strong>Comment TravelBot s'intègre-t-il à mon site web et à mes systèmes existants ?</strong>
+            TravelBot est conçu pour une intégration facile et rapide. Nous fournissons une documentation complète et un support technique pour vous aider à intégrer TravelBot à votre site web et à vos systèmes existants sans besoin de compétences techniques avancées.</p>
+            <p><strong>Est-ce que TravelBot nécessite une formation spéciale pour mon équipe ?</strong>
+            Non, TravelBot est intuitif et facile à utiliser. Nous fournissons également des ressources de formation et un support pour vous aider à tirer le meilleur parti de notre solution.</p>
+            <p><strong>Quels sont les coûts associés à l'utilisation de TravelBot ?</strong>
+            Les coûts varient en fonction de vos besoins spécifiques et de la taille de votre agence. Contactez-nous pour une consultation gratuite et un devis personnalisé.</p>
+            <p><strong>Que faire si j'ai besoin d'aide avec TravelBot ?</strong>
+            Notre équipe de support est disponible pour vous aider avec toutes vos questions et préoccupations. Vous pouvez nous contacter par email, téléphone ou via notre site web.</p>
+            <p><strong>Comment puis-je commencer à utiliser TravelBot ?</strong>
+            C'est simple ! Contactez-nous pour une démo gratuite ou pour en savoir plus sur nos offres. Nous serons ravis de vous accompagner dans la mise en place de TravelBot pour votre agence de voyage.</p>
+            <p><strong>TravelBot peut-il personnaliser ses réponses en fonction de mes spécificités ?</strong>
+            Oui, TravelBot peut être entraîné sur les données spécifiques de votre agence pour personnaliser ses réponses. En utilisant les informations de vos clients et les données internes de votre agence, TravelBot offre des réponses adaptées et précises, améliorant ainsi l'expérience utilisateur et répondant aux besoins spécifiques de chaque client.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TravelBot. Tous droits réservés. <a href="#">Politique de confidentialité</a> | <a href="#">Conditions d'utilisation</a></p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
